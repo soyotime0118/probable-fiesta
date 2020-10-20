@@ -23,6 +23,7 @@ dependencies {
     implementation 'mysql:mysql-connector-java:8.0.21'
     compileOnly 'org.projectlombok:lombok:1.18.14'
     annotationProcessor 'org.projectlombok:lombok:1.18.14'
+    implementation 'javax.inject:javax.inject:1'
 
     testCompileOnly 'org.projectlombok:lombok:1.18.14'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.14'
