@@ -1,4 +1,4 @@
-package com.mason.alpha.shop;
+package com.mason.alpha.discount;
 
 import java.util.List;
 
