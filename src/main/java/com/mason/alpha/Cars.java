@@ -2,7 +2,7 @@ package com.mason.alpha;
 
 import com.atomikos.icatch.jta.UserTransactionImp;
 import com.atomikos.jdbc.AtomikosDataSourceBean;
-import com.mason.alpha.config.DataSourceConfig;
+import com.mason.alpha.infra.config.DataSourceConfig;
 import lombok.extern.log4j.Log4j2;
 
 import javax.transaction.*;

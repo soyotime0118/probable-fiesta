@@ -1,4 +1,4 @@
-package com.mason.alpha.config;
+package com.mason.alpha.infra.config;
 
 import com.atomikos.jdbc.AtomikosDataSourceBean;
 import com.mysql.cj.jdbc.MysqlXADataSource;
