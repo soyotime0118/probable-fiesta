@@ -1,17 +1,19 @@
 package com.mason.alpha.catalog;
 
+import lombok.Setter;
+
 import java.util.Set;
 
 public class CatalogServiceImpl implements CatalogService {
 
     private final String supprotedType = "CATALOG";
 
+    @Setter
+    private CatalogRepository catalogRepository;
+
     @Override
     public long create(String name, Set<String> prodNos) {
-        Catalog catalog = Catalog.builder()
-                .name(name)
-                .productNos(prodNos).build();
-        return catalog.getCatalogNo();
+        return catalogRepository.save(name, prodNos);
     }
 
     @Override

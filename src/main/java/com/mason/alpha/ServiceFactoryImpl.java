@@ -8,7 +8,7 @@ public class ServiceFactoryImpl implements ServiceFactory {
     @Override
     public Service makeSvc(String serviceType) {
         if (catalogService.isSupportedType(serviceType)) {
-            return new CatalogServiceImpl();
+            return catalogService;
         }
         throw new IllegalArgumentException();
     }
