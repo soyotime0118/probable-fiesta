@@ -23,6 +23,8 @@ class CatalogTest {
     void create() {
         catalogRepository = (CatalogRepository) repositoryFactory.makeRepository("CATALOG");
         catalogService = (CatalogService) serviceFactory.makeSvc("CATALOG");
+        catalogService.setCatalogRepository(catalogRepository);
+
         HashSet set = new HashSet<String>();
         set.add("B");
         long catalogNo = catalogService.create("AAA", set);

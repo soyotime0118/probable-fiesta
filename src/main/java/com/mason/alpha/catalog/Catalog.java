@@ -24,15 +24,5 @@ public class Catalog {
         this.productNos = productNos;
     }
 
-    static long create(
-            String name,
-            Set<String> productNos
-    ) {
-        return new CatalogBuilder().name(name)
-                .productNos(productNos)
-                .build()
-                .getCatalogNo();
-    }
-
 
 }

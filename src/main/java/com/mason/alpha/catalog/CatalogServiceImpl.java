@@ -1,18 +1,24 @@
 package com.mason.alpha.catalog;
 
-import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.Set;
 
+@Log4j2
 public class CatalogServiceImpl implements CatalogService {
 
     private final String supprotedType = "CATALOG";
 
-    @Setter
     private CatalogRepository catalogRepository;
 
     @Override
+    public void setCatalogRepository(CatalogRepository catalogRepository) {
+        this.catalogRepository = catalogRepository;
+    }
+
+    @Override
     public long create(String name, Set<String> prodNos) {
+        log.debug("name : {} prodNos: {}", name, prodNos);
         return catalogRepository.save(name, prodNos);
     }
 
