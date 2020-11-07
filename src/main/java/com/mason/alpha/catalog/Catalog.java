@@ -14,7 +14,7 @@ public class Catalog {
     private final Set<String> productNos;
 
     @Builder
-    public Catalog(
+    private Catalog(
             long catalogNo,
             String name,
             Set<String> productNos
@@ -24,14 +24,14 @@ public class Catalog {
         this.productNos = productNos;
     }
 
-    long save(
-            long catalogNo,
-            String name, Set<String> productNos
+    static long create(
+            String name,
+            Set<String> productNos
     ) {
         return new CatalogBuilder().name(name)
                 .productNos(productNos)
-                .catalogNo(catalogNo)
-                .build().getCatalogNo();
+                .build()
+                .getCatalogNo();
     }
 
 
