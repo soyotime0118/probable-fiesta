@@ -1,5 +1,6 @@
-package com.mason.alpha.catalog;
+package com.mason.alpha;
 
+import com.mason.alpha.catalog.CatalogService;
 import lombok.extern.log4j.Log4j2;
 import org.hamcrest.core.IsNull;
 import org.junit.jupiter.api.Test;
