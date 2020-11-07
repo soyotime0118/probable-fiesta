@@ -12,12 +12,15 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @Log4j2
 class CatalogTest {
 
+    ServiceFactory serviceFactory = new ServiceFactoryImpl();
+    CatalogService catalogService;
 
     @Test
     void create() {
+        catalogService = serviceFactory.makeSvc();
         HashSet set = new HashSet<String>();
         set.add("B");
-        long catalogNo = Catalog.create("AAA", set);
+        long catalogNo = catalogService.create("AAA", set);
         log.debug(catalogNo);
         assertThat(catalogNo, IsNull.notNullValue());
     }
