@@ -1,11 +1,15 @@
 package com.mason.alpha;
 
-import com.mason.alpha.catalog.CatalogService;
 import com.mason.alpha.catalog.CatalogServiceImpl;
 
 public class ServiceFactoryImpl implements ServiceFactory {
+    CatalogServiceImpl catalogService = new CatalogServiceImpl();
+
     @Override
-    public CatalogService makeSvc() {
-        return new CatalogServiceImpl();
+    public Service makeSvc(String serviceType) {
+        if (catalogService.isSupportedType(serviceType)) {
+            return new CatalogServiceImpl();
+        }
+        throw new IllegalArgumentException();
     }
 }

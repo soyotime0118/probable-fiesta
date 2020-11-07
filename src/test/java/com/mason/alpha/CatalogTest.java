@@ -18,7 +18,7 @@ class CatalogTest {
 
     @Test
     void create() {
-        catalogService = serviceFactory.makeSvc();
+        catalogService = (CatalogService) serviceFactory.makeSvc("CATALOG");
         HashSet set = new HashSet<String>();
         set.add("B");
         long catalogNo = catalogService.create("AAA", set);
