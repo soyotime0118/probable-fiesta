@@ -4,12 +4,10 @@ import com.atomikos.jdbc.AtomikosDataSourceBean;
 import com.mysql.cj.jdbc.MysqlXADataSource;
 import org.h2.jdbcx.JdbcDataSource;
 
-import javax.annotation.Resource;
 import java.sql.SQLException;
 
 public class DataSourceConfig
 {
-    @Resource(name = "jdbc/testMysql")
     public AtomikosDataSourceBean mysqlXADataSource() throws SQLException
     {
         MysqlXADataSource mysqlXADataSource = new MysqlXADataSource();
@@ -23,13 +21,11 @@ public class DataSourceConfig
         return atomikosDataSourceBean;
     }
 
-    @Resource(name = "jdbc/testH2")
-    public AtomikosDataSourceBean h2XADataSource() throws SQLException
-    {
+    public AtomikosDataSourceBean h2XADataSource() {
         JdbcDataSource h2XADataSource = new JdbcDataSource();
         h2XADataSource.setUser("sa");
         h2XADataSource.setPassword("");
-        h2XADataSource.setUrl("jdbc:h2:tcp://localhost:1521/test/TEST_h2");
+        h2XADataSource.setUrl("jdbc:h2:tcp://localhost:1521/test");
         AtomikosDataSourceBean atomikosDataSourceBean = new AtomikosDataSourceBean();
         atomikosDataSourceBean.setXaDataSource(h2XADataSource);
         atomikosDataSourceBean.setUniqueResourceName("h2");
