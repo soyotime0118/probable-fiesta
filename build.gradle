@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'com.google.cloud.tools.jib' version '2.7.0'
 }
 
 group 'org.example'
@@ -38,3 +39,13 @@ dependencies {
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.3'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.3'
 }
+
+//jib.to.image = 'dos0118/alpha'
+//jib {
+//    to {
+//        image = 'dos0118/alpha'
+//    }
+//    outputPaths {
+//        imageId = ''
+//    }
+//}
