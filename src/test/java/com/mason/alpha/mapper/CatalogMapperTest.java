@@ -11,20 +11,22 @@ import static org.junit.Assert.assertThat;
 
 
 @Log4j2
-class CatalogMapperTest {
+class CatalogMapperTest
+{
+
+//    @Test
+//    void selectCatalog() {
+//        CatalogMapper catalogMapper = new CatalogMapper();
+//        List<Catalog> result = catalogMapper.findByName("ABC");
+//
+////        assertTh(result.get(0)).
+//
+//        assertThat(result.get(0).getID(), IsEqual.equalTo(1L));
+//    }
 
     @Test
-    void selectCatalog() {
-        CatalogMapper catalogMapper = new CatalogMapper();
-        List<Catalog> result = catalogMapper.findByName("ABC");
-
-//        assertTh(result.get(0)).
-
-        assertThat(result.get(0).getID(), IsEqual.equalTo(1L));
-    }
-
-    @Test
-    void selectCatalog2() {
+    void selectCatalog2()
+    {
         CatalogMapper catalogMapper = new CatalogMapper();
         Catalog result = catalogMapper.find(1L);
 
@@ -32,14 +34,14 @@ class CatalogMapperTest {
 
         assertThat(result.getID(), IsEqual.equalTo(1L));
     }
-    @Test
-    void updateCatalog() {
-        CatalogMapper catalogMapper = new CatalogMapper();
-
-        Catalog catalog = new Catalog(1L,"NEW_ABC","NEW_IMG");
-//        assertTh(result.get(0)).
-        catalogMapper.update(catalog);
-
+//    @Test
+//    void updateCatalog() {
+//        CatalogMapper catalogMapper = new CatalogMapper();
+//
+//        Catalog catalog = new Catalog(1L,"NEW_ABC","NEW_IMG");
+////        assertTh(result.get(0)).
+//        catalogMapper.update(catalog);
+//
 //        assertThat(result.get(0).getId(), IsEqual.equalTo(1L));
-    }
+//    }
 }

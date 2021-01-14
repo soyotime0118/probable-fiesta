@@ -27,7 +27,7 @@ public class DataMap {
     }
 
     public String columnList() {
-        StringBuffer result = new StringBuffer(" catalog_id");
+        StringBuffer result = new StringBuffer(" ID");
         for (Iterator it = columnMaps.iterator(); it.hasNext(); ) {
             result.append(",");
             ColumnMap columnMap = (ColumnMap) it.next();

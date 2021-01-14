@@ -1,7 +1,10 @@
 package com.mason.alpha.mapper;
 
+import lombok.ToString;
+
 import java.lang.reflect.Field;
 
+@ToString(of = {"columnName", "fieldName"})
 public class ColumnMap {
     private String columnName;
     private String fieldName;
