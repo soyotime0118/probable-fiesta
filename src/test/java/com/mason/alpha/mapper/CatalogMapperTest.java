@@ -20,9 +20,18 @@ class CatalogMapperTest {
 
 //        assertTh(result.get(0)).
 
-        assertThat(result.get(0).getId(), IsEqual.equalTo(1L));
+        assertThat(result.get(0).getID(), IsEqual.equalTo(1L));
     }
 
+    @Test
+    void selectCatalog2() {
+        CatalogMapper catalogMapper = new CatalogMapper();
+        Catalog result = catalogMapper.find(1L);
+
+//        assertTh(result.get(0)).
+
+        assertThat(result.getID(), IsEqual.equalTo(1L));
+    }
     @Test
     void updateCatalog() {
         CatalogMapper catalogMapper = new CatalogMapper();

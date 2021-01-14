@@ -9,7 +9,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CatalogMapper {
+public class CatalogMapper extends Mapper {
+
+
+    protected void loadDataMap() {
+        dataMap = new DataMap(Catalog.class,"catalog");
+        dataMap.addColumn("catalog_id", "varchar", "id");
+        dataMap.addColumn("catalog_name", "varchar", "name");
+        dataMap.addColumn("catalog_img_url", "varchar", "imageUrl");
+    }
 
     private static String findNameStatement = "Select catalog_id, catalog_name, catalog_img_url " +
             "From " +
@@ -40,6 +48,11 @@ public class CatalogMapper {
         return result;
     }
 
+    public Catalog find(Long key) {
+        loadDataMap();
+        return (Catalog) findObject(key);
+    }
+
     private Object load(ResultSet rs) throws SQLException {
         Long id = new Long(rs.getLong(1));
         Catalog catalog = doLoad(id, rs);
@@ -59,7 +72,7 @@ public class CatalogMapper {
             stmt = DB.prepare(updateStatementString);
             stmt.setString(1, catalog.getName());
             stmt.setString(2, catalog.getImageUrl());
-            stmt.setLong(3, catalog.getId());
+            stmt.setLong(3, catalog.getID());
             stmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();
