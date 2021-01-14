@@ -26,7 +26,7 @@ public class ColumnMap {
         try {
             field = dataMap.getDomainClass().getDeclaredField(getFieldName());
         } catch (NoSuchFieldException e) {
-            throw new RuntimeException("필드 설정 불가 " + fieldName, e);
+            throw new RuntimeException("필드 초기화 불가 " + fieldName, e);
         }
     }
 

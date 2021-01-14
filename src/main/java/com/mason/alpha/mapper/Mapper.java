@@ -19,7 +19,9 @@ public class Mapper
     public DomainObject findObject(Long key)
     {
         log.info("컬럼정보로 쿼리문 생성 시작");
-        String sql = "\nSELECT" + dataMap.columnList() + " \nFROM " + dataMap.getTableName() + " \nWHERE ID = ? ";
+        String sql = "\nSELECT" + dataMap.columnList() +
+            " \nFROM " + dataMap.getTableName() +
+            " \nWHERE ID = ? ";
         log.info("\t쿼리 생성 : {} ", sql);
         log.info("컬럼정보로 쿼리문 생성 끝\n");
 
